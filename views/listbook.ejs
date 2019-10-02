@@ -1,0 +1,28 @@
+<form action="../book/search" method="get">
+  <label> Year:<input name="year" type="text" /> </label><br />
+  <label> Title:<input name="name" type="text" /> </label><br />
+  <input type="submit" value="Search" />
+</form>
+
+<table border=1, frame=void, margin=10px, padding=10px>
+  <th>Name</th>
+  <th>Year</th>
+  <th>Type</th>
+  <th>Author</th>
+  <th>Update</th>
+  <th>Delete</th>
+  <tbody>
+    <% books.forEach((book) => { %>
+    <tr>
+      <td><%= book.name %></td>
+      <td><%= book.year %></td>
+      <td><%= book.type %></td>
+      <td><%= book.author %></td>
+      <td><a href='../book/updatebook?name=<%=book.name%>&year=<%=book.year%>'>Update</a></td>
+      <td><a href='../book/deletebook?name=<%=book.name%>&year=<%=book.year%>'>Delete</a></td>
+    </tr>
+    <% }) %>
+
+  </tbody>
+</table>
+<a href="../book/addbook"><button>Thêm sách mới</button></a>

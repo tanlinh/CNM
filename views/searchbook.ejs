@@ -1,0 +1,24 @@
+<h3>Danh sách cuốn sách bạn đã tìm</h3>
+<h5>Từ khóa tìm kiếm</h5>
+<h5>Năm: <%= year %> <br> 
+    Tên: <%= name %>
+</h5>
+
+<table border=1, frame=void, margin=10px, padding=20px>
+  <th>Name</th>
+  <th>Year</th>
+  <th>Type</th>
+  <th>Author</th>
+  <tbody>
+    <% books.forEach((book) => { %>
+    <tr>
+      <td><%= book.name %></td>
+      <td><%= book.year %></td>
+      <td><%= book.type %></td>
+      <td><%= book.author %></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<a href="../"><button> Trang Chủ </button></a>
